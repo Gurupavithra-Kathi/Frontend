@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp form</title>
+</head>
+
+<body>
+    <style>
+        .myPage {
+            display: flex;
+            flex-direction: row;
+        }
+        input{
+            height: 35px;
+            width:200px;
+            border-radius: 5px;
+            background-color:whitesmoke;
+        }
+        input::placeholder{
+            color:darkslategrey;
+            font-size: 15px;
+        }
+        button{
+            
+            /* background-color: blue; */
+            color:black;
+            height: 30px;
+            width:90px;
+            background-color:#38cc8b;
+             margin: 10px auto;
+            
+        }
+        body{
+            background-color: orange;
+            background-image: url(image/bg-intro-desktop.png);
+        }
+        article{
+            text-align: center;
+            padding: 20px 20px 20px 20px;
+        }
+        .flex-item{
+            flex:1;
+        }
+     
+    </style>
+
+<main >
+    <h1 style="text-align: center;">Submit your form today</h1>
+    <h1 id="validatemsg" style="text-align: center;"></h1>
+    <section class="myPage">
+        
+        <article class="flex-item">
+            <h2>Learn to code</h2>
+            <p>Welcome to the world of coding ,happpy coding!</p>
+            
+            <p>desinged for practice purpose</p>
+        </article>
+        <form class="flex-item" onsubmit="validateForm(event)">
+            <h1>Form</h1>
+               <label for="firstname" ></label><br>
+            <input type="text" name="firstname" placeholder="First Name" id="firstname" required><br>
+               <label for="lastname"></label><br>
+         <input type="text" name="lastname" placeholder="Last Name" id="lastname" required><br>
+         <label for="email"></label><br>
+         <input type="email" name="email" placeholder="Email Address" id="email" required><br>
+         <label for="password"></label><br>
+         <input type="text" name="password" placeholder="Password" id="password" required><br>
+         <br>
+         <button>Submit </button>
+        </form>
+        <script>
+            function validateForm(event){
+                    event.preventDefault(); 
+                console.log("Detailsd submitted successfully!")
+                let getfirstname=document.getElementById("firstname").value;
+            document.getElementById("validatemsg").innerHTML="Hello User:"+getfirstname;
+            alert("Thank you for filling, we will contact you soon")
+
+
+        }     
+        </script>
+</main>
+
+</body>
+
+</html>
