@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    <style>
+        input{
+     height: 40px;
+     color: black;
+  border-radius: 10px;
+min-width:400px;
+        }
+        .todo_container{
+            text-align: center;
+          
+        }
+        body{
+            background-color: antiquewhite;
+        }
+        button{
+            background-color: green;
+            color:white;
+            height:40px;
+            border-radius: 10px;;
+        }
+        .main_container{
+            text-align: center;
+        }
+    </style>
+    <script>
+        function addToList(){
+// let getlist=document.getElementById("finallist").innerText;
+let getTask=document.getElementById("listitem").value;
+console.log(getTask);
+const node=document.createElement("li")
+const ele=document.createTextNode(getTask);
+const linebreak=document.createElement("br");
+let finalnode=node.appendChild(ele)
+let getdiv=document.getElementById("finallist");
+let addbtn= getdiv.appendChild(finalnode).after(linebreak);
+// let createbtn=document.createElement("span")
+// createbtn.textContent="X";
+// addbtn.appendChild(createbtn);
+document.getElementById("listitem").value="";
+}
+    </script>
+    <div class="main_container">
+    <div class="todo_container">
+        <h1>To Do List</h1>
+    <label for="listitem"></label>
+    <input type="text" id="listitem" name="listitem" placeholder="Enter your task"><br><br>
+    <button onclick="addToList()">Add to List</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <ul id="finallist">
+
+    </ul>
+    </div>
+</body>
+</html>
